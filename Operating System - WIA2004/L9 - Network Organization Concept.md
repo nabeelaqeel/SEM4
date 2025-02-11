@@ -59,6 +59,30 @@
 		- Tolerance of failure at a site or communication link
 		- Cost of long communication lines
 		- Difficulty connecting one site to large number of other sites
+	- Four basic criteria
+		- Basic cost
+			- Expense required to link various sites in system
+		- Communications cost
+			- Time required to send message from one site to another
+		- Reliability
+			- Assurance of site communication if link or site fails
+		- User environment
+			- Critical parameters for successful business investment
+
+### Star
+- Transmitted data from sender to receiver
+	- Passes through central controller
+- Hub or centralized topology
+- Advantages
+	- Permits easy routing
+	- Easy access control to network
+- Disadvantages
+	- Requires extremely reliable central site
+	- Requires ability to handle all network traffic
+		- No matter how heavy
+- ![[../images/Pasted image 20250212022410.png]]
+
+
 
 
 
