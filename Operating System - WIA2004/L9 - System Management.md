@@ -58,7 +58,7 @@
 		- You buy a device with an MTBF of 4000 hours (the number is given by the manufacturer), and you plan to use it for 4 hours a day for 20 days a month (= 80 hours per month). What is the failure rate?
 		- Failure rate = MTBF/usage = 4000/80 = 50
 		- The MTTR is the average time it would take to have a piece of hardware repaired, and would depend on several factors: the seriousness of the damage, the location of the repair shop, how quickly you need it back, how much you are willing to pay etc.
-		- ![[../images/Pasted image 20250212111247.png]]
+		- ![](../images/Pasted%20image%2020250212111247.png)
 		- From the previous example:
 			- MTBF = 4000 hours
 			- MTTR = 2 hours
@@ -68,7 +68,7 @@
 
 	- and reliability. 
 		- Reliability is similar to availability, but it measures the probability that a unit will not fail during a given time period (t), and it’s a function of MTBF. 
-		- ![[../images/Pasted image 20250212111337.png]]
+		- ![](../images/Pasted%20image%2020250212111337.png)
 		- (where e is the mathematical constant approximately equal to 2.71828) 
 		- Example:
 		- Let’s say you absolutely need to use a certain device for the 10 minutes before an upcoming deadline. With time expressed in hours, the unit’s reliability is given by:
@@ -85,12 +85,12 @@
 
 ### Negative feedback loop 
 - A negative feedback loop mechanism monitors the system and, when it becomes too congested, it will signals the Job Scheduler to slow down the arrival rate of the processes. 
-- ![[../images/Pasted image 20250212111558.png]]
+- ![](../images/Pasted%20image%2020250212111558.png)
 	- A simple negative feedback loop. It monitors system activity and goes into action only when the system is too busy.
 
 ### Positive feedback loop
 - A positive feedback loop mechanism works in the opposite way: it monitors the system, and when the system becomes underutilized, the positive feedback loop causes the arrival rate to increase 
-- ![[../images/Pasted image 20250212111633.png]]
+- ![](../images/Pasted%20image%2020250212111633.png)
 	- A simple positive feedback loop. It monitors system activity and goes into action only when the system is not busy enough. System activity monitoring is critical here because the system can become unstable.
 
 

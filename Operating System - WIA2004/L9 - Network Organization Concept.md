@@ -31,7 +31,7 @@
 		- No local dependencies for controlling and managing resources
 	- Cooperative management
 	- Comprised of four managers with a wider scope
-	- ![[../images/Pasted image 20250212021455.png]]
+	- ![](../images/Pasted%20image%2020250212021455.png)
 	- Advantages over traditional systems
 		- Easy and reliable resource sharing
 		- Faster computation
@@ -51,7 +51,7 @@
 	- Node
 		- Name assigned to computer system 
 			- Provides identification
-	- ![[../images/Pasted image 20250212021610.png]]
+	- ![](../images/Pasted%20image%2020250212021610.png)
 	- Physically or logically connected sites
 	- Star, ring, bus, tree, hybrid
 	- Topology tradeoffs 
@@ -80,7 +80,7 @@
 	- Requires extremely reliable central site
 	- Requires ability to handle all network traffic
 		- No matter how heavy
-- ![[../images/Pasted image 20250212022410.png]]
+- ![](../images/Pasted%20image%2020250212022410.png)
 
 
  ### Ring
@@ -94,9 +94,9 @@
 	- One direction only
 - Every node must be functional
 	- Bypass failed node needed for proper operation
-- ![[../images/Pasted image 20250212103904.png]]
-- ![[../images/Pasted image 20250212103910.png]]
-- ![[../images/Pasted image 20250212103915.png]]
+- ![](../images/Pasted%20image%2020250212103904.png)
+- ![](../images/Pasted%20image%2020250212103910.png)
+- ![](../images/Pasted%20image%2020250212103915.png)
 
 ### Bus
 - Sites connect to single communication line
@@ -106,7 +106,7 @@
 	- Prevent collision
 - Data passes directly from one device to another
 	- Data may be routed to end point controller at end of the line
-- ![[../images/Pasted image 20250212103947.png]]
+- ![](../images/Pasted%20image%2020250212103947.png)
 
 ### Tree
 - Collection of buses connected by branching cable
@@ -118,13 +118,13 @@
 	- Host absorbs message
 - Advantage
 	- Message traffic still flows even if single node fails
-- ![[../images/Pasted image 20250212104020.png]]
+- ![](../images/Pasted%20image%2020250212104020.png)
 
 ### Hybrid
 - Strong points of each topology in combination
 	- Effectively meet system communications requirements
-- ![[../images/Pasted image 20250212104040.png]]
-- ![[../images/Pasted image 20250212104051.png]]
+- ![](../images/Pasted%20image%2020250212104040.png)
+- ![](../images/Pasted%20image%2020250212104051.png)
 
 ### Network Types
 - Grouping
@@ -183,10 +183,10 @@
 			- Located within range of network
 		- Security vulnerabilities
 			- Open architecture; difficulty keeping intruders out
-		- ![[../images/Pasted image 20250212104516.png]]
+		- ![](../images/Pasted%20image%2020250212104516.png)
 		- WiMAX standard 802.16
 			- High bandwidth, long distances
-		- ![[../images/Pasted image 20250212104531.png]]
+		- ![](../images/Pasted%20image%2020250212104531.png)
 
 ### Software Design Issues
 - How do sites use addresses to locate other sites?
@@ -287,8 +287,8 @@
 		- More flexible, reliable 
 		- Greater line efficiency
 		- Users allocate message priority
-	- ![[../images/Pasted image 20250212105233.png]]
-	- ![[../images/Pasted image 20250212105409.png]]
+	- ![](../images/Pasted%20image%2020250212105233.png)
+	- ![](../images/Pasted%20image%2020250212105409.png)
 - Datagrams
 	- Packet destination and sequence number added to information
 		- Uniquely identifying message to owning packet
@@ -412,7 +412,7 @@
 				- Written by nodes ready to transmit
 			- Nodes read and copy data from slots
 			- Continue travel toward end of bus: dissipate
-		- ![[../images/Pasted image 20250212110337.png]]
+		- ![](../images/Pasted%20image%2020250212110337.png)
 		- DQDB advantages
 			- Negligible delays under light loads
 			- Predictable queuing under heavy loads
@@ -472,7 +472,7 @@
 - Organizes communication system
 - Three components: processes, hosts, networks
 - Four layers
-- ![[../images/Pasted image 20250212110717.png]]
+- ![](../images/Pasted%20image%2020250212110717.png)
 	- Network Access Layer
 		- Protocols provide access to communication network
 		- Flow control, error control between hosts, security, and priority implementation performed 
