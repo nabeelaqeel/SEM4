@@ -83,10 +83,421 @@
 - ![[../images/Pasted image 20250212022410.png]]
 
 
+ ### Ring
+- Sites connected in closed loop
+- May connect to other networks
+	- Using bridge (same protocols)
+	- Using gateway (different protocols)
+- Data transmitted in packets
+	- Source and destination address fields
+- Packet passed from node to node
+	- One direction only
+- Every node must be functional
+	- Bypass failed node needed for proper operation
+- ![[../images/Pasted image 20250212103904.png]]
+- ![[../images/Pasted image 20250212103910.png]]
+- ![[../images/Pasted image 20250212103915.png]]
+
+### Bus
+- Sites connect to single communication line
+- Messages circulate in both directions
+- One site sends messages at a time successfully
+- Need control mechanism
+	- Prevent collision
+- Data passes directly from one device to another
+	- Data may be routed to end point controller at end of the line
+- ![[../images/Pasted image 20250212103947.png]]
+
+### Tree
+- Collection of buses connected by branching cable
+	- No closed loops
+- Designers create networks using bridges
+- Message from any site
+	- Received by all other sites until reaching end point
+- Reaches end point controller without acceptance
+	- Host absorbs message
+- Advantage
+	- Message traffic still flows even if single node fails
+- ![[../images/Pasted image 20250212104020.png]]
+
+### Hybrid
+- Strong points of each topology in combination
+	- Effectively meet system communications requirements
+- ![[../images/Pasted image 20250212104040.png]]
+- ![[../images/Pasted image 20250212104051.png]]
+
+### Network Types
+- Grouping
+	- According to physical distances covered
+- Characteristics blurring
+- Network types
+	- Local area networks (LAN)
+		- Single office building, campus, similarly enclosed environment
+			- Single organization owns/operates
+		- Communicate through common communication line
+		- Communications not limited to local area only
+			- Component of larger communication network
+			- Easy access to outside
+				- Through bridge or gateway
+		- Bridge
+			- Connects two or more geographically distant LANs
+			- Same protocols
+				- Bridge connecting two LANs using Ethernet 
+		- Gateway
+			- Connects two or more LANs or systems
+			- Different protocols
+				- Translates one network protocol into another
+				- Resolves hardware and software incompatibilities
+				- SNA gateway connecting microcomputer network to mainframe host
+		- Data rates: 100 Mbps to more than 40 Gbps
+		- Close physical proximity
+			- Very high-speed transmission 
+		- Star, ring, bus, tree, and hybrid
+			- Normally used 
+		- Transmission medium: varies 
+		- Factors determining transmission medium
+			- Cost, data rate, reliability, number of devices supported, distance between units
+
+	- Metropolitan area networks (MAN)
+		- Configuration spanning area larger than LAN
+			- Several blocks of buildings to entire city
+				- Not exceeding 100 km circumference
+		- Owned and operated by a single organization
+			- Used by many individuals and organizations
+			- May be owned and operated as public utilities
+				- Means for internetworking several LANs
+		- High-speed network often configured as a logical ring
+
+	- Wide area networks (WAN) 
+		- Interconnects communication facilities in different parts of a country or world
+			- Operated as part of public utility
+		- Uses common carriers’ communications lines
+			- Telephone companies
+		- Uses broad range of communication media
+			- Satellite, microwaves
+		- WANs generally slower than LANs
+			- Examples: ARPAnet (first WAN), Internet (most widely recognized WAN)
+
+	- Wireless Local Area Network
+		- LAN using wireless technology to connect computers or workstations 
+			- Located within range of network
+		- Security vulnerabilities
+			- Open architecture; difficulty keeping intruders out
+		- ![[../images/Pasted image 20250212104516.png]]
+		- WiMAX standard 802.16
+			- High bandwidth, long distances
+		- ![[../images/Pasted image 20250212104531.png]]
+
+### Software Design Issues
+- How do sites use addresses to locate other sites?
+- How are messages routed and how are they sent?
+- How do processes communicate with each other?
+- How are conflicting demands for resources resolved?
+
+### Addressing Conventions
+- Addressing protocols 
+	- Fulfill need to uniquely identify users
+	- Closely related to site network topology and geographic location
+- Distinction between local and global name 
+	- Local name within its own system
+	- Global name outside its own system
+		- Must follow standard name conventions (length, formats)
+- Example: Internet address
+	- someone@icarus.lis.pitt.edu
+	- Uses Domain Name Service (DNS) protocol
+		- General-purpose data query service
+		- Hierarchical
+- Domain names read left to right
+	- Logical user to host machine
+	- Host machine to net machine
+	- Net machine to cluster
+	- Cluster to network
+- Periods separate components
+
+### Routing Strategies
+- Router
+	- Internetworking device (primarily software driven)
+	- Directs traffic 
+		- Between two different types of LANs
+		- Between two network segments (different protocol addresses)
+	- Network layer operation
+	- Role changes (network designs changes)
+- Connects sites
+	- To other sites and Internet
+- Router functions
+	- Securing information
+		- Generated in predefined areas
+	- Choosing fastest route 
+		- From one point to another
+	- Providing redundant network connections
+- Routing protocol considerations
+	- Addressing, address resolution, message format, error reporting
+- Address resolution
+	- Maps hardware address
+- Message formats
+	- Allow performance of protocol functions 
+		- Finding new network nodes
+		- Determine whether they work (testing)
+		- Reporting error conditions
+		- Exchanging routing information
+		- Establishing connections (transmit data)
+- Most widely used Internet routing protocols
+	- Routing information protocol (RIP)
+		- Path selection based on node and hop number
+			- Between source and destination 
+		- Path with smallest number of hops chosen (always)
+		- Advantage
+			- Easy to implement
+		- Disadvantages
+			- No consideration: bandwidth, data priority, network type
+			- Update and reissue routing table: changes or not
+			- Tables propagate (router to router)
+
+	- Open shortest path first (OSPF)
+		- Network state determined first
+		- Transmission path selected
+		- Update messages sent when changes in routing environment occur
+			- Reduces number of messages in internetwork
+			- Reduces message size: not sending entire table
+		- Disadvantages
+			- Increased memory usage
+			- Bandwidth savings offset by higher CPU usage
+			- Shortest path calculation
 
 
+### Connection Methods
+- Communication network concern
+	- Moving data from one point to another
+	- Minimizing transmission costs
+	- Providing full connectivity
+- `Circuit switching`
+	- Dedicated communication path
+		- Established between two hosts before transmission begins
+	- Example: telephone system
+	- Disadvantage
+		- Delay before signal transfer begins
+- `Packet switching`
+	- Store-and-forward technique
+		- Before sending message 
+			- Divide into multiple equal-sized units (packets)
+		- At destination
+			- Packets reassembled into original long format
+			- Header contains pertinent packet information
+	- Advantages
+		- More flexible, reliable 
+		- Greater line efficiency
+		- Users allocate message priority
+	- ![[../images/Pasted image 20250212105233.png]]
+	- ![[../images/Pasted image 20250212105409.png]]
+- Datagrams
+	- Packet destination and sequence number added to information
+		- Uniquely identifying message to owning packet
+	- Each packet handled independently
+	- Route selected as each packet accepted 
+	- At destination
+		- All packets of same message reassembled
+	- Advantages
+		- Diminishes congestion and provides reliability
+	- Message not delivered until all packets accounted for
+	- Receiving node requests retransmission
+		- Lost or damaged packets
+	- Advantages
+		- Diminishes congestion
+		- Sends incoming packets through less heavily used paths
+		- More reliability
+		- Alternate paths set up upon node failure
+- Virtual circuit
+	- Complete path sender to receiver
+		- Established before transmission starts
+	- All message packets use same route
+	- Several virtual circuits to any other node
+	- Advantages
+		- Routing decision made once
+		- Speeds up transmission
+	- Disadvantages 
+		- All virtual circuits fail upon one failure
+		- Difficult to resolve congestion (in heavy traffic)
+
+### Conflict Resolution
+- Device sharing requires access control methods
+	- Facilitates equal and fair network access
+- `Access control techniques`
+	- Round robin
+		- Node given certain time to complete transmission
+		- Efficient
+			- If many nodes transmitting over long time periods
+		- Substantial overhead
+			- If few nodes transmit over long time periods
+		
+	- Reservation 		
+		- Good if lengthy and continuous traffic
+		- Access time on medium divided into slots
+		- Node reserves future time slots
+		- Good configuration
+			- Several terminals connected to host through single I/O port 
 
 
+	- Contention
+		- No attempt to determine transmission turn
+		- Nodes compete for medium access 
+		- Advantages and disadvantages
+			- Easy implementation; works well under light to moderate traffic; better for short and intermittent traffic
+			- Performance breaks down under heavy loads
+- `Medium access control protocols`
+	- Carrier sense multiple access (CSMA)
+		- Contention-based protocol 
+		- Easy implementation (Ethernet)
+		- Carrier sense
+			- Node listens to/tests communication medium before transmitting messages
+			- Prevents collision with node currently transmitting
+		- Multiple access
+			- Several nodes connected to same communication line as peers
+			- Same level and equal privileges
+		- CSMA Disadvantages
+			- Collision
+				- Two or more nodes transmit at same instant
+			- Probability of collision increases 
+				- As nodes get further apart 
+			- Large or complex networks
+				- Less appealing access protocol
+		- CSMA/CD
+			- Modification of CSMA
+			- Includes collision detection (Ethernet)
+			- Reduces wasted transmission capacity
+			- Prevents multiple nodes from colliding 
+				- Collisions not completely eliminated (reduced)
+			- Collision occurrence involves small packet
+		- No guarantee data will reach destination
+		- Ensures error free data delivery
+		- Use in Half-Duplex Communixation
+		- New improved version: CSMA/CA (collision Avoidance)
 
+	- Token passing
+		- Special electronic message (token)
+			- Generated and passed node to node
+		- Only node with token allowed to transmit
+			- Then passes token
+		- Fast access
+		- Collisions nonexistent
+		- Typical topologies
+			- Bus 
+			- Ring
+		- Token Bus
+			- Token passed to node in turn
+				- Data attached; sent to destination
+			- Receiving node
+				- Copies data; adds acknowledgment; returns packet to sending node
+			- Sending node passes token to next node in sequence
+			- Initial node order determination
+				- Cooperative decentralized algorithm
+				- Then determined by priority based on node activity
+			- Higher overhead at each node (than CSMA/CD)
+			- Nodes have long waits before receiving token
+		- Token-ring
+			- Token moves between nodes in turn
+				- One direction only
+			- To send message
+				- Node must wait for free token 
+			- Receiving node copies packet message
+				- Sets copied bit indicating successful receipt
+
+
+	- Distributed-queue, dual bus
+		- Dual-bus configuration
+			- Each bus transports data one direction only
+			- Steady stream of fixed-size slots
+		- Slots generated at end of each bus
+			- Marked as free and sent downstream
+				- Marked busy and written to nodes that are ready to transmit data
+				- Written by nodes ready to transmit
+			- Nodes read and copy data from slots
+			- Continue travel toward end of bus: dissipate
+		- ![[../images/Pasted image 20250212110337.png]]
+		- DQDB advantages
+			- Negligible delays under light loads
+			- Predictable queuing under heavy loads
+			- Suitable for MANs managing large file transfers 
+			- Satisfy interactive users’ needs
+
+### Transport Protocol Standards
+- Network usage grew quickly (1980s)
+- Need to integrate dissimilar network devices
+	- Different vendors
+- Creation of single universally adopted architecture
+	- OSI reference model
+	- TCP/IP
+
+### OSI Reference Model
+- Basis for connecting open systems
+	- Distributed applications processing
+- “Open” 
+	- Connect any two systems conforming to reference model and related standards
+		- Vendor independent 
+- Similar functions collected together
+	- Seven logical clusters (layers)
+- Layer 1: The Physical Layer
+	- Describes mechanical, electrical, functional specifications
+	- Transmits bits over communication line
+		- Examples: 100Base-T, RS449, CCITT V.35
+- Layer 2: The Data Link Layer
+	- Establishes and controls physical communications path before data sent
+	- Transmission error checking
+	- Problem resolution (on other side)
+		- Examples: HDLC and SDLC
+- Layer 3: The Network Layer
+	- Addressing and routing services moving data through network to destination
+- Layer 4: The Transport Layer
+	- Maintains reliable data transmission between end users
+		- Example: Transmission Control Protocol (TCP)
+- Layer 5: The Session Layer
+	- Provides user-oriented connection service
+	- Transfers data over communication lines
+		- Example: TCP/IP
+- Layer 6: The Presentation Layer
+	- Data manipulation functions common to many applications
+		- Formatting, compression, encryption
+- Layer 7: The Application Layer
+	- Application programs, terminals, computers
+		- Access network
+	- Provides user interface
+	- Formats user data before passing to lower layers 
+
+### Transmission Control Protocol/Internet Protocol (TCP/IP)
+- Oldest transport protocol standard
+- Internet communications basis
+- File-transfer protocol: send large files error free
+- TCP/IP
+	- Emphasizes internetworking
+	- Provides connectionless services
+- Organizes communication system
+- Three components: processes, hosts, networks
+- Four layers
+- ![[../images/Pasted image 20250212110717.png]]
+	- Network Access Layer
+		- Protocols provide access to communication network
+		- Flow control, error control between hosts, security, and priority implementation performed 
+	- Internet Layer
+		- Equivalent to OSI model network layer performing  routing functions
+		- Implemented within gateways and hosts
+		- Example: Internet Protocol (IP)
+	- Host-Host Layer
+		- Transfer data between two processes
+			- Different host computers
+		- Error checking, flow control, manipulate connection control signals
+		- Example: Transmission Control Protocol (TCP)
+	- Process/Application Layer
+		- Protocols for computer-to-computer resource sharing and terminal-to-computer remote access
+		- Examples: FTP, SMTP, Telnet
+
+### Summary
+- Network operating systems: coordinate functions 
+	- Memory Manager, Processor Manager, Device Manager, File Manager
+	- Must meet owner reliability requirements
+		- Detect node failures; change routing instructions to bypass; retransmit lost messages successfully
+- Basic network organization concepts
+	- Terminology
+	- Network topologies and types
+	- Software design issues
+	- Transport protocol standards
 
 
