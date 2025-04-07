@@ -1,0 +1,9 @@
+
+| **Aspect**           | **Information Security**                                              | **Network Security**                                                      | **Cybersecurity**                                                      |
+| -------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Definition           | measures taken to protect the records from unauthorized entry and use | method of protecting the usability and integrity of your network and data | method of protecting systems, network and programs from digital attack |
+| **Primary Focus**    | Protecting information (CIA)                                          | Securing network infrastructure                                           | Protecting digital systems                                             |
+| **Scope**            | Broad (includes physical data)                                        | Narrow (focused on networks)                                              | Broad (includes all digital)                                           |
+| **Examples**         | Encryption, access controls                                           | Firewalls, VPNs, IDS/IPS                                                  | Anti-malware, threat detection                                         |
+| **Goal**             | Safeguard data integrity                                              | Secure network communication                                              | Defend against cyber threats                                           |
+| Common Security Risk | Access , Destruction , Availability                                   | Viruses , worms , trojans, DOS attack , Zero-day attack                   | Social engineering , Brute force , Baiting , Ransomeware               |
