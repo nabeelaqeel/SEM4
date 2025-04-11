@@ -1,6 +1,6 @@
 
-![](../../images/2.4.8-lab---social-engineering.pdf)
-![](../../images/36972.pdf)
+![](../../res/2.4.8-lab---social-engineering.pdf)
+![](../../res/36972.pdf)
 ### Objectives
 - Research and identify social engineering attacks
 ### Background / Scenario
