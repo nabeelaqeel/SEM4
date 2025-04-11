@@ -10,4 +10,4 @@ The impact of the attack is financial losses where it was estimated at $4 billio
 
 To Mitigate this attack is regularly updating Windows system that prevents exploitation of known vulnerabilities . This ransomware actually attack an old vulnerabilities where the security patch has been released by Microsoft . However , user who has not updated their computer and company who still use Windows XP (which the NHS still largely uses), Windows 8 and Windows Server 2003 which no longer receive mainstream support is infected. Next , using Cisco AMP to detects and block ransomware in real time . Lastly , Isolating a critical system using firewall and VLANs to limits the malware spread
 
-![](../../images/s41746-019-0161-6.pdf)
+![](../../res/s41746-019-0161-6.pdf)

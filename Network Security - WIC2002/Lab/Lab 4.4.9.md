@@ -1,5 +1,5 @@
 ![](../../res/4.4.9-lab---configure-network-devices-with-ssh.pdf)
-![](../../images/Pasted%20image%2020250410175152.png)
+![](../../res/Pasted%20image%2020250410175152.png)
 
 - R1
 ```

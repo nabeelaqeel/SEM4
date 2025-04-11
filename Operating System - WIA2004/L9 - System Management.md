@@ -68,7 +68,7 @@
 
 	- and reliability. 
 		- Reliability is similar to availability, but it measures the probability that a unit will not fail during a given time period (t), and it’s a function of MTBF. 
-		- ![](../images/Pasted%20image%2020250212111337.png)
+		- ![](../res/Pasted%20image%2020250212111337.png)
 		- (where e is the mathematical constant approximately equal to 2.71828) 
 		- Example:
 		- Let’s say you absolutely need to use a certain device for the 10 minutes before an upcoming deadline. With time expressed in hours, the unit’s reliability is given by:
@@ -85,12 +85,12 @@
 
 ### Negative feedback loop 
 - A negative feedback loop mechanism monitors the system and, when it becomes too congested, it will signals the Job Scheduler to slow down the arrival rate of the processes. 
-- ![](../images/Pasted%20image%2020250212111558.png)
+- ![](../res/Pasted%20image%2020250212111558.png)
 	- A simple negative feedback loop. It monitors system activity and goes into action only when the system is too busy.
 
 ### Positive feedback loop
 - A positive feedback loop mechanism works in the opposite way: it monitors the system, and when the system becomes underutilized, the positive feedback loop causes the arrival rate to increase 
-- ![](../images/Pasted%20image%2020250212111633.png)
+- ![](../res/Pasted%20image%2020250212111633.png)
 	- A simple positive feedback loop. It monitors system activity and goes into action only when the system is not busy enough. System activity monitoring is critical here because the system can become unstable.
 
 

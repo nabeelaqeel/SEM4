@@ -8,4 +8,4 @@ Using your creativity, draw out a closed-loop system that Malaysia should adopt 
 
 Submission Dateline: **Before your Week 2 Tutorial classes**.
 
-![](../images/Pasted%20image%2020250327213113.png)
+![](../res/Pasted%20image%2020250327213113.png)
