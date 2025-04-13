@@ -103,4 +103,35 @@ secret admin1pass
 commands exec include all show
 commands exec include all config terminal
 commands exec include all debug
+
+enable view admin1
+admin1pass
+```
+
+```
+enable view
+pass : cisco12345
+
+parser view admin2
+secret admin2pass
+
+command exec include all show 
+```
+
+```
+enable view
+pass : cisco12345
+
+parser view tech
+secret techpasswd
+
+command exec include show version 
+command exec include show interface
+command exec include show ip int br
+command exec include show parser view
+```
+
+- Verify 
+```
+show parser view
 ```

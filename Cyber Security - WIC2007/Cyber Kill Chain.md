@@ -1,0 +1,7 @@
+- Reconnaissance
+- Weaponization
+- Delivery
+- Exploitation
+- Installation
+- Command & Control
+- Actions on Objectives
