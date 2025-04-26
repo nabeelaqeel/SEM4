@@ -2,37 +2,267 @@
 > [!NOTE]- File Allocation Strategies
 > ```c
 > #include <stdio.h>
+> #include <stdlib.h>
+> #include <stdbool.h>
+> #include <string.h>
+> 
+> #define MAX_FILES 100
+> #define MAX_BLOCKS 1000
+> #define MAX_FILENAME 50
+> 
+> typedef struct {
+>     char name[MAX_FILENAME];
+>     int start_block;
+>     int length;
+>     bool allocated;
+> } File;
+> 
+> // Global variables
+> int disk[MAX_BLOCKS];  // Disk blocks (0 = free, 1 = allocated)
+> File files[MAX_FILES];  // File table
+> int num_files = 0;
+> 
+> // Function prototypes
+> void initializeDisk();
+> void displayMenu();
+> void allocateFile();
+> void deleteFile();
+> void displayFiles();
+> void displayDiskStatus();
 > 
 > int main() {
->     int n, i, start, len;
+>     int choice;
 >     
->     printf("Enter no. of blocks: ");
->     scanf("%d", &n);
+>     initializeDisk();
 >     
->     int b[n];
->     for(i=0; i<n; i++) b[i] = 0; // 0 means free
->     
->     printf("Enter starting block & length: ");
->     scanf("%d %d", &start, &len);
->     
->     if(start+len > n) {
->         printf("Not enough space!\n");
->         return 0;
->     }
->     
->     for(i=start; i<start+len; i++) {
->         if(b[i] == 1) {
->             printf("Block %d already allocated!\n", i);
->             return 0;
+>     while (1) {
+>         displayMenu();
+>         printf("Enter your choice: ");
+>         scanf("%d", &choice);
+>         
+>         switch (choice) {
+>             case 1:
+>                 allocateFile();
+>                 break;
+>             case 2:
+>                 deleteFile();
+>                 break;
+>             case 3:
+>                 displayFiles();
+>                 break;
+>             case 4:
+>                 displayDiskStatus();
+>                 break;
+>             case 5:
+>                 printf("Exiting program...\n");
+>                 return 0;
+>             default:
+>                 printf("Invalid choice! Please try again.\n");
 >         }
->         b[i] = 1; // 1 means allocated
+>         
+>         printf("\nPress Enter to continue...");
+>         getchar();
+>         getchar();  // Consume newline
 >     }
->     
->     printf("File allocated to blocks: ");
->     for(i=start; i<start+len; i++) 
->         printf("%d ", i);
 >     
 >     return 0;
+> }
+> 
+> void initializeDisk() {
+>     for (int i = 0; i < MAX_BLOCKS; i++) {
+>         disk[i] = 0;  // Initialize all blocks as free
+>     }
+>     
+>     for (int i = 0; i < MAX_FILES; i++) {
+>         files[i].allocated = false;
+>     }
+>     
+>     printf("Disk initialized with %d blocks.\n", MAX_BLOCKS);
+> }
+> 
+> void displayMenu() {
+>     printf("\n\n====== SEQUENTIAL FILE ALLOCATION SIMULATOR ======\n");
+>     printf("1. Allocate a new file\n");
+>     printf("2. Delete a file\n");
+>     printf("3. Display file table\n");
+>     printf("4. Display disk status\n");
+>     printf("5. Exit\n");
+> }
+> 
+> void allocateFile() {
+>     char filename[MAX_FILENAME];
+>     int size, start_block = -1;
+>     
+>     if (num_files >= MAX_FILES) {
+>         printf("Error: File table is full!\n");
+>         return;
+>     }
+>     
+>     printf("Enter file name: ");
+>     scanf("%s", filename);
+>     
+>     // Check if file already exists
+>     for (int i = 0; i < num_files; i++) {
+>         if (files[i].allocated && strcmp(files[i].name, filename) == 0) {
+>             printf("Error: File '%s' already exists!\n", filename);
+>             return;
+>         }
+>     }
+>     
+>     printf("Enter file size (number of blocks): ");
+>     scanf("%d", &size);
+>     
+>     if (size <= 0 || size > MAX_BLOCKS) {
+>         printf("Error: Invalid file size!\n");
+>         return;
+>     }
+>     
+>     // Find contiguous blocks for the file (Sequential allocation)
+>     int current_start = -1;
+>     int current_length = 0;
+>     
+>     for (int i = 0; i < MAX_BLOCKS; i++) {
+>         if (disk[i] == 0) {  // Free block
+>             if (current_start == -1) {
+>                 current_start = i;
+>             }
+>             current_length++;
+>             
+>             if (current_length == size) {
+>                 start_block = current_start;
+>                 break;
+>             }
+>         } else {  // Allocated block
+>             current_start = -1;
+>             current_length = 0;
+>         }
+>     }
+>     
+>     if (start_block == -1) {
+>         printf("Error: Not enough contiguous space available on disk!\n");
+>         return;
+>     }
+>     
+>     // Allocate the blocks
+>     for (int i = start_block; i < start_block + size; i++) {
+>         disk[i] = 1;  // Mark as allocated
+>     }
+>     
+>     // Update file table
+>     strcpy(files[num_files].name, filename);
+>     files[num_files].start_block = start_block;
+>     files[num_files].length = size;
+>     files[num_files].allocated = true;
+>     num_files++;
+>     
+>     printf("File '%s' allocated successfully!\n", filename);
+>     printf("Start block: %d, Size: %d blocks\n", start_block, size);
+> }
+> 
+> void deleteFile() {
+>     char filename[MAX_FILENAME];
+>     int file_index = -1;
+>     
+>     printf("Enter file name to delete: ");
+>     scanf("%s", filename);
+>     
+>     // Find the file
+>     for (int i = 0; i < num_files; i++) {
+>         if (files[i].allocated && strcmp(files[i].name, filename) == 0) {
+>             file_index = i;
+>             break;
+>         }
+>     }
+>     
+>     if (file_index == -1) {
+>         printf("Error: File '%s' not found!\n", filename);
+>         return;
+>     }
+>     
+>     // Free the allocated blocks
+>     for (int i = files[file_index].start_block; 
+>          i < files[file_index].start_block + files[file_index].length; 
+>          i++) {
+>         disk[i] = 0;  // Mark as free
+>     }
+>     
+>     // Update file table
+>     printf("File '%s' deleted successfully!\n", files[file_index].name);
+>     files[file_index].allocated = false;
+>     
+>     // Compact the file table (optional)
+>     if (file_index < num_files - 1) {
+>         for (int i = file_index; i < num_files - 1; i++) {
+>             files[i] = files[i + 1];
+>         }
+>     }
+>     num_files--;
+> }
+> 
+> void displayFiles() {
+>     if (num_files == 0) {
+>         printf("No files are currently allocated.\n");
+>         return;
+>     }
+>     
+>     printf("\n========== FILE TABLE ==========\n");
+>     printf("%-20s %-15s %-15s\n", "Filename", "Start Block", "Size (blocks)");
+>     printf("----------------------------------------\n");
+>     
+>     for (int i = 0; i < num_files; i++) {
+>         if (files[i].allocated) {
+>             printf("%-20s %-15d %-15d\n", 
+>                    files[i].name, 
+>                    files[i].start_block, 
+>                    files[i].length);
+>         }
+>     }
+> }
+> 
+> void displayDiskStatus() {
+>     int total_blocks = MAX_BLOCKS;
+>     int allocated_blocks = 0;
+>     int free_blocks = 0;
+>     
+>     for (int i = 0; i < MAX_BLOCKS; i++) {
+>         if (disk[i] == 1) {
+>             allocated_blocks++;
+>         } else {
+>             free_blocks++;
+>         }
+>     }
+>     
+>     printf("\n========== DISK STATUS ==========\n");
+>     printf("Total blocks: %d\n", total_blocks);
+>     printf("Allocated blocks: %d (%.2f%%)\n", 
+>            allocated_blocks, 
+>            (float)allocated_blocks / total_blocks * 100);
+>     printf("Free blocks: %d (%.2f%%)\n", 
+>            free_blocks, 
+>            (float)free_blocks / total_blocks * 100);
+>     
+>     // Display a simple visual representation of the disk
+>     printf("\nDisk Map (each character represents 10 blocks):\n");
+>     printf("[");
+>     for (int i = 0; i < MAX_BLOCKS; i += 10) {
+>         int block_group_usage = 0;
+>         for (int j = i; j < i + 10 && j < MAX_BLOCKS; j++) {
+>             if (disk[j] == 1) {
+>                 block_group_usage++;
+>             }
+>         }
+>         
+>         if (block_group_usage == 0) {
+>             printf(" ");  // Empty
+>         } else if (block_group_usage < 5) {
+>             printf("░");  // Partially filled
+>         } else if (block_group_usage < 10) {
+>             printf("▒");  // Mostly filled
+>         } else {
+>             printf("█");  // Completely filled
+>         }
+>     }
+>     printf("]");
 > }
 > ```
 
