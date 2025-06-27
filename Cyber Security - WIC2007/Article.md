@@ -1,0 +1,8 @@
+Rootkit Threats in Malaysia: Cyber-Attacks and Espionage Campaigns
+In recent years, Malaysia has fallen prey to large-scale cybersecurity breaches in the guise of rootkits—stealthy malware targeting unauthorized access and concealing malicious activity in computer systems. A classic example is the R00TK1T hacker group, which declared a cyber-attack campaign on Malaysian infrastructure in January 2024. The group so named after the term "rootkit" employed advanced techniques such as web defacement, data theft, and network intrusion, perhaps with insider assistance. The National Cyber Coordination and Command Centre (NC4) responded by issuing advisories urging organizations to take preventive measures to guard against such attacks.
+
+Besides R00TK1T, Malaysia has also been targeted by other sophisticated cyber attacks that utilize rootkit technology. For instance, the Earth Kurma cyber-espionage campaign has infected several Southeast Asian countries, including Malaysia. This campaign employs custom malware and kernel-mode rootkits to acquire persistent access, acquire data via cloud services, and conduct credential theft. These attacks illustrate the extreme significance of good cybersecurity habits, including regular system updates, employee training, and implementation of advanced threat detection software, to protect against such surreptitious and long-term attacks.
+
+Reference :
+https://www.sangfor.com/blog/cybersecurity/r00tk1t-hacking-group-malaysia-needs-stronger-cybersecurity
+https://thehackernews.com/2025/04/earth-kurma-targets-southeast-asia-with.html

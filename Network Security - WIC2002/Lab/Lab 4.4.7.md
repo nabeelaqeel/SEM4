@@ -73,6 +73,8 @@ ip 192.168.3.3 255.255.255.0 192.168.3.1
 
 > I also change from layer 3 cable to layer 2 cable . It doesnt work on layer 3 cable
 
+> if im ping from switch to router then it can work why??
+
 - S1
 ```
 int vlan 1
