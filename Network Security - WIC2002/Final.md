@@ -23,9 +23,23 @@
 > ```
 
 # Job of Network Security profession
+- File : `Network Security v1.0 - Module 3.pptx`
 - responsible for maintaining data assurance for an organization and ensuring the integrity and confidentiality of information.
+- Job roles 
+	- Chief Information Officer (CIO)
+	- Information Security Officer(CISO)
+	- Security Operations(SecOps) Manager
+	- Chief Security Officer(CSO)
+	- Security Manger 
+	- Network Security Engineer
 - 
 # CIA
+- `Confidentiality` 
+	- Only authorized individuals, entities, or processes can access sensitive information.
+- `Integrity` 
+	- This refers to the protection of data from unauthorized alteration.
+- `Availability` 
+	- Authorized users must have uninterrupted access to the network resources and data that they require
 
 # Malware , worm , virus
 - File :  `Network Security v1.0 - Module 2.pptx`
@@ -55,6 +69,37 @@
 	- Scareware
 	- Phishing
 	- Rootkits
+- File : `Network Security v1.0 - Module 3.pptx`
+- Mitigating :
+	- Worms
+		- four phases: containment, inoculation, quarantine, and treatment
+		- ![](../images/Screenshot%20from%202025-07-02%2001-07-12.png)
+	- Reconnaissance Attack
+		- Implementing authentication to ensure proper access.
+	    - Using encryption to render packet sniffer attacks useless.
+	    - Using anti-sniffer tools to detect packet sniffer attacks.
+	    - Implementing a switched infrastructure.
+	    - Using a firewall and IPS.
+	- Access Attack : 
+		- `Use strong passwords` - Strong passwords are at least eight characters and contain uppercase letters, lowercase letters, numbers, and special characters.
+		- `Disable accounts` after a specified number of unsuccessful logins has occurred - This practice helps to prevent continuous password attempts.
+	- Dos Attack :
+		- sign : 
+			- network utilization graph showing unusual activity
+			- unusually slow network performance
+			- large number of user complaints about unavailable resources
+		- DHCP snooping,
+		- port security
+		- ARP inspection
+		- ACLs
+	- NFP Framework
+		- Cisco Network Foundation Protection(NFP) Framework
+		- routers and switches into three functional areas:
+			- `Control plane` - Responsible for routing data correctly.
+			- `Management plane` - Responsible for managing network elements.
+			- `Data plane`- Responsible for forwarding data.
+		- ![](../images/Screenshot%20from%202025-07-02%2001-17-02.png)
 # SDN
 
 # IDS , IPS
+- File : `Network Security v1.0 - Module 11.pptx`

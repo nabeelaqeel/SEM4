@@ -1,5 +1,5 @@
 ## 22 Module 
-- [[Module 1]] : Securing Networks
+- [Module 1](Module%201.md) : Securing Networks
 - Module 2 : Network Threats
 - Module 3 : Mitigating Threats
 - Module 4 : Secure Device Access

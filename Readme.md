@@ -4,7 +4,7 @@ for i in {1..22}; do file="Network Security v1.0 - Module $i.pptx"; [ -f "$file"
 ```
 
 # Module 13
-![](../images/Pasted%20image%2020250509234758.png)
+![](images/Pasted%20image%2020250509234758.png)
 
 ```
 authentication port-control [auto | force-authorized(default) | force-unauthorized]
@@ -69,7 +69,7 @@ mac address-table notification
 ```
 
 
-![](../images/Pasted%20image%2020250510161037.png)
+![](images/Pasted%20image%2020250510161037.png)
 ---
 
 ## Mitigate VLAN Attack

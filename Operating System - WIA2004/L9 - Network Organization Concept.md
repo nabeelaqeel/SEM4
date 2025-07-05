@@ -51,7 +51,7 @@
 	- Node
 		- Name assigned to computer system 
 			- Provides identification
-	- ![](../images/Pasted%20image%2020250212021610.png)
+	- ![](../res/Pasted%20image%2020250212021610.png)
 	- Physically or logically connected sites
 	- Star, ring, bus, tree, hybrid
 	- Topology tradeoffs 
@@ -95,8 +95,8 @@
 - Every node must be functional
 	- Bypass failed node needed for proper operation
 - ![](../res/Pasted%20image%2020250212103904.png)
-- ![](../images/Pasted%20image%2020250212103910.png)
-- ![](../images/Pasted%20image%2020250212103915.png)
+- ![](../res/Pasted%20image%2020250212103910.png)
+- ![](../res/Pasted%20image%2020250212103915.png)
 
 ### Bus
 - Sites connect to single communication line
@@ -118,13 +118,13 @@
 	- Host absorbs message
 - Advantage
 	- Message traffic still flows even if single node fails
-- ![](../images/Pasted%20image%2020250212104020.png)
+- ![](../res/Pasted%20image%2020250212104020.png)
 
 ### Hybrid
 - Strong points of each topology in combination
 	- Effectively meet system communications requirements
 - ![](../res/Pasted%20image%2020250212104040.png)
-- ![](../images/Pasted%20image%2020250212104051.png)
+- ![](../res/Pasted%20image%2020250212104051.png)
 
 ### Network Types
 - Grouping
@@ -186,7 +186,7 @@
 		- ![](../res/Pasted%20image%2020250212104516.png)
 		- WiMAX standard 802.16
 			- High bandwidth, long distances
-		- ![](../images/Pasted%20image%2020250212104531.png)
+		- ![](../res/Pasted%20image%2020250212104531.png)
 
 ### Software Design Issues
 - How do sites use addresses to locate other sites?
@@ -288,7 +288,7 @@
 		- Greater line efficiency
 		- Users allocate message priority
 	- ![](../res/Pasted%20image%2020250212105233.png)
-	- ![](../images/Pasted%20image%2020250212105409.png)
+	- ![](../res/Pasted%20image%2020250212105409.png)
 - Datagrams
 	- Packet destination and sequence number added to information
 		- Uniquely identifying message to owning packet
@@ -472,7 +472,7 @@
 - Organizes communication system
 - Three components: processes, hosts, networks
 - Four layers
-- ![](../images/Pasted%20image%2020250212110717.png)
+- ![](../res/Pasted%20image%2020250212110717.png)
 	- Network Access Layer
 		- Protocols provide access to communication network
 		- Flow control, error control between hosts, security, and priority implementation performed 

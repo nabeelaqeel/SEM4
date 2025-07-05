@@ -58,7 +58,7 @@
 		- You buy a device with an MTBF of 4000 hours (the number is given by the manufacturer), and you plan to use it for 4 hours a day for 20 days a month (= 80 hours per month). What is the failure rate?
 		- Failure rate = MTBF/usage = 4000/80 = 50
 		- The MTTR is the average time it would take to have a piece of hardware repaired, and would depend on several factors: the seriousness of the damage, the location of the repair shop, how quickly you need it back, how much you are willing to pay etc.
-		- ![](../images/Pasted%20image%2020250212111247.png)
+		- ![](../res/Pasted%20image%2020250212111247.png)
 		- From the previous example:
 			- MTBF = 4000 hours
 			- MTTR = 2 hours
