@@ -32,7 +32,7 @@
 	- Chief Security Officer(CSO)
 	- Security Manger 
 	- Network Security Engineer
-- 
+
 # CIA
 - `Confidentiality` 
 	- Only authorized individuals, entities, or processes can access sensitive information.
