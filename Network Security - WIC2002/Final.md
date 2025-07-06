@@ -120,9 +120,9 @@
 			- **Processor** - Intrusion prevention requires CPU power to perform intrusion detection analysis and pattern matching.			    
 			- **Memory** - Intrusion detection analysis is memory-intensive. Memory directly affects the ability of a network-based IPS to efficiently and accurately detect an attack.)
 - Modes of Deployment
-	- - inline mode (interface pair mode)
+	- inline mode (interface pair mode)
 		- ![](../images/Screenshot%20from%202025-07-06%2011-22-15.png)
-	- - promiscuous mode (passive mode)
+	- promiscuous mode (passive mode)
 		- ![](../images/Screenshot%20from%202025-07-06%2011-22-34.png)
 - IPS Component
 	- - **IPS detection and enforcement engine** -
@@ -254,16 +254,5 @@ ability to rate-limit the traffic.
 		- Uses a centralized controller that has knowledge of all devices inthe network, as shown in the figure. The applications can interface with the controller responsible for managing devices and manipulating traffic flows throughout the network.
 		- The Cisco Open SDN Controller is a commercial distribution of OpenDaylight
 		- ![](../images/Screenshot%20from%202025-07-06%2012-22-27.png)
-	- Policy-based SDN: Similar to controller-
-based SDN where a centralized controller
-has a view of all devices in the network,
-as shown in the figure. Policy-based SDN
-includes an additional Policy layer that
-operates at a higher level of abstraction.
-It uses built-in applications that automate
-advanced configuration tasks via a
-guided workflow and user-friendly GUI.
-No programming skills are required.
-Cisco APIC-EM is an example of this type
-of SDN.
+	- Policy-based SDN: Similar to controller-based SDN where a centralized controller has a view of all devices in the network,as shown in the figure. Policy-based SDN includes an additional Policy layer that operates at a higher level of abstraction.It uses built-in applications that automate advanced configuration tasks via a guided workflow and user-friendly GUI.No programming skills are required.Cisco APIC-EM is an example of this type of SDN.
 	![](../images/Screenshot%20from%202025-07-06%2012-23-09.png)
