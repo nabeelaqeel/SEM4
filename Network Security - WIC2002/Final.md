@@ -32,6 +32,12 @@
 	- Chief Security Officer(CSO)
 	- Security Manger 
 	- Network Security Engineer
+- Stay update 
+	- They must constantly upgrade their skill set to keep abreast of the latest threats.
+	-     They must attend training and workshops.
+	-     They must subscribe to real-time feeds regarding threats.
+	-     They must peruse security websites daily.
+	-     They must maintain familiarity with network security organizations. These organizations often have the latest information on threats and vulnerabilities.
 
 # CIA
 - `Confidentiality` 
@@ -106,11 +112,11 @@
 - ![](../images/Screenshot%20from%202025-07-06%2011-17-16.png)
 - 2 primary kinds of IPS available: 
 	- host-based IPS (HIPS) 
-		- - combination of antivirus software, antimalware software, and a firewall.
+		-  combination of antivirus software, antimalware software, and a firewall.
 		- example of a HIPS is Windows Defender.
 	- network-based IPS.
-		- - implemented using a dedicated or non-dedicated IPS device such as a router
-		- - can be implemented in several ways:
+		-  implemented using a dedicated or non-dedicated IPS device such as a router
+		-  can be implemented in several ways:
 			- On a Cisco Firepower appliance
 			- On an ASA firewall device
 			- On an ISR router
@@ -149,15 +155,11 @@
 		- **Composite Signature -** Also called a stateful signature because the IPS requires several pieces of data to match an attack signature. The IPS must also maintain state information which is referred to as the event horizon. The length of an event horizon varies from one signature to the next.
 		- ![](../images/Screenshot%20from%202025-07-06%2011-33-30.png)![](../images/Screenshot%20from%202025-07-06%2011-33-59.png)
 - Cisco IPS
-	- - **Cisco Firepower Next-Generation IPS (NGIPS)** - These are dedicated in-line threat prevention appliances that provide industry leading effectiveness against both known and unknown threats.
+	- -**Cisco Firepower Next-Generation IPS (NGIPS)** - These are dedicated in-line threat prevention appliances that provide industry leading effectiveness against both known and unknown threats.
 	- NGIPS **features** include:
-	    
 		- IPS rules that identify and block attack traffic that target network vulnerabilities
-		    
 		- Tightly integrated defense against advanced malware incorporating advanced analysis of network and endpoint activity
-		    
 		- Sandboxing technology that uses hundreds of behavioral indicators to identify zero-day and evasive attacks
-		    
 		- Also includes Application Visibility and Control (AVC), Cisco Advanced Malware Protection (AMP) for Networks, and URL Filtering
 	- **Cisco Snort IPS** - This is an IPS service that can be enabled on a second generation ISR (ISR G2) (i.e., ISR 4000s). Note that Cisco 4000 ISRs no longer support Cisco IOS IPS.
 		- -functionalities:
@@ -170,9 +172,8 @@
 			- Event logging
 	    
 	- **External Snort IPS Server** - This is similar to the Cisco Snort IPS solution but requires a promiscuous (i.e., a SPAN switch port) port and an external Snort IDS/IPS.
-	- - Snort IPS requires two VPG interfaces:
+	- Snort IPS requires two VPG interfaces:
 		- **Management interface** - This is the interface that is used to source logs to the log collector and for retrieving signature updates from Cisco.com. For this reason, this interface requires a routable IP address.
-		    
 		- **Data interface** - This is the interface that is used to send user traffic between the Snort virtual container service and the router forwarding plane.
 		- ![](../images/Screenshot%20from%202025-07-06%2011-37-30.png)
 
@@ -188,9 +189,8 @@ File : `Network Security v1.0 - Module 6.pptx
 
 - **Out-of-band (OOB)** - Information flows on a dedicated management network on which no production traffic resides.
 	- ![](../images/Screenshot%20from%202025-07-06%2011-47-45.png)
-	- - guidelines are:
-		- Provide the highest level of security.
-		    
+	- guidelines are:
+		- Provide the highest level of security.    
 		- Mitigate the risk of passing insecure management protocols over the production network.
 
 # NTP
@@ -241,13 +241,11 @@ to the network.
 	and IEEE 802.1aq Shortest Path Bridging (SPB).
 ![](../images/Screenshot%20from%202025-07-06%2012-19-09.png)
 ![](../images/Pasted%20image%2020250706121939.png)
-![](../images/Screenshot%20from%202025-07-06%2012-19-55.png)- Flow Table - This table matches incoming packets to a particular flow and specifies the functions
-that are to be performed on the packets. There may be multiple flow tables that operate in a
-pipeline fashion.
-•Group Table - A flow table may direct a flow to a Group Table, which may trigger a variety of
-actions that affect one or more flows.
-•Meter Table - This table triggers a variety of performance-related actions on a flow including the
-ability to rate-limit the traffic.
+![](../images/Screenshot%20from%202025-07-06%2012-19-55.png)
+
+- Flow Table - This table matches incoming packets to a particular flow and specifies the functions that are to be performed on the packets. There may be multiple flow tables that operate in a pipeline fashion.
+• Group Table - A flow table may direct a flow to a Group Table, which may trigger a variety of actions that affect one or more flows.
+• Meter Table - This table triggers a variety of performance-related actions on a flow including the ability to rate-limit the traffic.
 
 - SDN Types
 	- Controller-based SDN: 
