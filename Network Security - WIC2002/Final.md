@@ -109,6 +109,12 @@
 # IDS , IPS
 - File : `Network Security v1.0 - Module 11.pptx`
 - Intrusion Detection System (IDS) , Intrusion Prevention System(IPS)
+- IDS
+	- implemented to passively monitor the traffic on a network. IDS-enabled device copies the traffic stream and analyzes the copied traffic rather than the actual forwarded packets. 
+	- 
+- IPS
+	- device that can immediately detect and stop an attack.
+
 - ![](../images/Screenshot%20from%202025-07-06%2011-17-16.png)
 - 2 primary kinds of IPS available: 
 	- host-based IPS (HIPS) 
@@ -131,7 +137,7 @@
 	- promiscuous mode (passive mode)
 		- ![](../images/Screenshot%20from%202025-07-06%2011-22-34.png)
 - IPS Component
-	- - **IPS detection and enforcement engine** -
+	-  **IPS detection and enforcement engine** -
 		- To validate traffic, the detection engine compares incoming traffic with known attack signatures that are included in the IPS attack signature package.
     
 	- **IPS attack signatures package** - 
@@ -208,9 +214,12 @@ File : `Network Security v1.0 - Module 6.pptx
 # SDN
 - File : `ENSA_Module_13.pdf`
 
-`Software-Defined Networking (SDN`) - A network architecture that virtualizes the
-network, offering a new approach to network administration and management that
-seeks to simplify and streamline the administration process.
+- `Software-Defined Networking (SDN`) :
+	- an approach to networking that uses software-based controllers or application programming interfaces (APIs) to communicate with underlying hardware infrastructure and direct traffic on a network.
+	- A network architecture that virtualizes the network, offering a new approach to network administration and management that seeks to simplify and streamline the administration process.
+		- Increased control with greater speed and flexibility
+		- Customizable network infrastructure
+		- Robust security
 
 • `Control plane` - This is typically regarded as the brains of a device. It is used to make
 forwarding decisions. The control plane contains Layer 2 and Layer 3 route forwarding
@@ -244,8 +253,8 @@ to the network.
 ![](../images/Screenshot%20from%202025-07-06%2012-19-55.png)
 
 - Flow Table - This table matches incoming packets to a particular flow and specifies the functions that are to be performed on the packets. There may be multiple flow tables that operate in a pipeline fashion.
-• Group Table - A flow table may direct a flow to a Group Table, which may trigger a variety of actions that affect one or more flows.
-• Meter Table - This table triggers a variety of performance-related actions on a flow including the ability to rate-limit the traffic.
+- Group Table - A flow table may direct a flow to a Group Table, which may trigger a variety of actions that affect one or more flows.
+- Meter Table - This table triggers a variety of performance-related actions on a flow including the ability to rate-limit the traffic.
 
 - SDN Types
 	- Controller-based SDN: 
@@ -254,3 +263,5 @@ to the network.
 		- ![](../images/Screenshot%20from%202025-07-06%2012-22-27.png)
 	- Policy-based SDN: Similar to controller-based SDN where a centralized controller has a view of all devices in the network,as shown in the figure. Policy-based SDN includes an additional Policy layer that operates at a higher level of abstraction.It uses built-in applications that automate advanced configuration tasks via a guided workflow and user-friendly GUI.No programming skills are required.Cisco APIC-EM is an example of this type of SDN.
 	![](../images/Screenshot%20from%202025-07-06%2012-23-09.png)
+# aaa
+![](../../images/Pasted%20image%2020250708080108.png)

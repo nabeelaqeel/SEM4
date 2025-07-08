@@ -2,48 +2,33 @@
 ![](../images/Pasted%20image%2020250707104734.png)
 ## Question 1
 
-### Part a) Difference between open-loop and closed-loop control systems
+Part a) Difference between open-loop and closed-loop control systems
 
 **Open-loop control system:**
 
-- Operates without feedback from the output
-    
+- Operates without feedback from the output    
 - The control action is independent of the system output
-    
 - Simpler design and less expensive
-    
 - Less accurate as it cannot correct for disturbances
-    
 - Examples: Toaster, washing machine timer, traffic light controller
     
-
 **Closed-loop control system:**
-
 - Uses feedback from sensors to compare actual output with desired output
-    
 - Can automatically correct errors in the system
-    
 - More complex design and more expensive
-    
 - More accurate and stable performance
-    
 - Examples: Thermostat-controlled heating system, cruise control in cars
     
 
 Key differences:
-
 1. Feedback: Open-loop has none, closed-loop uses feedback
-    
 2. Accuracy: Closed-loop is more accurate
-    
 3. Cost: Open-loop is generally cheaper
-    
 4. Complexity: Closed-loop is more complex
-    
 5. Disturbance handling: Closed-loop can compensate for disturbances
     
 
-### Part b) Cloud Computing vs Fog Computing comparison table
+ Part b) Cloud Computing vs Fog Computing comparison table
 
 |Feature|Cloud Computing|Fog Computing|
 |---|---|---|
@@ -90,60 +75,40 @@ Key differences:
 ![](../images/Pasted%20image%2020250707104801.png)
 ## Question 2
 
-### Part a) Function of digital, analog and PWM pins on Arduino Uno
+ Part a) Function of digital, analog and PWM pins on Arduino Uno
 
 **Digital Pins:**
-
 - Can be configured as either input or output
-    
 - Read or write binary values (HIGH/LOW, 1/0, 5V/0V)
-    
 - Typically used for buttons, LEDs, and digital sensors
-    
 - Pins 0-13 on Arduino Uno are digital pins
-    
 - Some digital pins (2,3) support external interrupts
     
 
 **Analog Pins:**
-
 - Can only be used as inputs by default (except some boards)
-    
 - Read analog voltage values (0-5V) with 10-bit resolution (0-1023)
-    
 - Used with analog sensors (potentiometers, light sensors, etc.)
-    
 - Pins A0-A5 on Arduino Uno are analog input pins
-    
 - Can be configured as digital pins if needed
     
 
 **PWM Pins (Pulse Width Modulation):**
-
 - Digital pins that can simulate analog output
-    
 - Work by rapidly switching between HIGH and LOW states
-    
 - Duty cycle determines the effective voltage
-    
 - Marked with ~ on Arduino Uno (pins 3,5,6,9,10,11)
-    
 - Used for dimming LEDs, controlling motor speed, etc.
     
-
-### Part b) Arduino code for button-controlled LED with connections
+Part b) Arduino code for button-controlled LED with connections
 
 **Circuit Connections:**
 
-- LED anode to digital pin 13 through a 220Ω resistor
-    
+- LED anode to digital pin 13 through a 220Ω resistor    
 - LED cathode to GND
-    
 - Push button one leg to digital pin 2
-    
 - Push button other leg to 5V through a 10kΩ pull-down resistor
     
-
 **Arduino Code:**
 
 ```cpp
@@ -168,19 +133,15 @@ void loop() {
 }
 ```
 
-### Part c) Arduino code for potentiometer-controlled LED dimming with connections
+Part c) Arduino code for potentiometer-controlled LED dimming with connections
 
 **Circuit Connections:**
 
-- LED anode to PWM pin 9 through a 220Ω resistor
-    
+- LED anode to PWM pin 9 through a 220Ω resistor    
 - LED cathode to GND
-    
 - Potentiometer outer pins to 5V and GND
-    
 - Potentiometer middle pin to analog input A0
     
-
 **Arduino Code:**
 
 ```cpp
@@ -199,16 +160,17 @@ void loop() {
   ledValue = map(potValue, 0, 1023, 0, 255); // Map to PWM range (0-255)
   analogWrite(ledPin, ledValue); // Set LED brightness
   delay(10); // Small delay for stability
+  
 }
 ```
 # Q3
 ![](../images/Pasted%20image%2020250707104822.png)
 ![](../images/Pasted%20image%2020250707104833.png)
 ![](../images/Pasted%20image%2020250707104850.png)
-## Question 3: Raspberry Pi Traffic Light Control
+
+Question 3: Raspberry Pi Traffic Light Control
 
 **Python Code for Traffic Light Control:**
-
 
 ```python
 import RPi.GPIO as GPIO
@@ -285,64 +247,43 @@ except KeyboardInterrupt:
 
 **Explanation:**
 
-1. The code initializes all the required GPIO pins - 3 for main traffic light, 2 for pedestrian light, and 1 for the button.
-    
+1. The code initializes all the required GPIO pins - 3 for main traffic light, 2 for pedestrian light, and 1 for the button.    
 2. The initial state sets main light to green and pedestrian light to red.
-    
 3. When the button is pressed (GPIO goes LOW due to pull-up resistor):
-    
     - Main light changes from green to yellow for 2 seconds
-        
     - Then changes to red while pedestrian light changes to green
-        
     - After 10 seconds, pedestrian light blinks before switching back to red
-        
     - Main light briefly shows yellow before returning to green
-        
 4. The system only responds when main light is green to prevent interruption during transition.
-    
 5. Includes debouncing and cleanup for proper operation.
 # Q4
 ![](../images/Pasted%20image%2020250707104919.png)
 ## Question 4: IoT-based Security System
 
-### Part a) Two important components
+ a) Two important components
 
-1. **Sensor: PIR Motion Sensor**
-    
+1. **Sensor: PIR Motion Sensor**    
     - Passive Infrared sensor detects movement by measuring infrared radiation
-        
     - Detects when a human (or animal) moves within its range (typically 5-7 meters)
-        
     - Low power consumption, suitable for continuous operation
-        
     - Provides digital output (HIGH when motion detected)
-        
     - Commonly used in security systems due to reliability and low cost
         
 2. **Actuator: Siren/Alarm**
-    
     - Audible alarm that activates when intrusion is detected
-        
     - Can be paired with strobe lights for visual alert
-        
     - Acts as both deterrent and notification mechanism
-        
     - Can be programmed for different patterns (continuous, pulsed, etc.)
-        
     - Should have backup power for reliability
         
 
-### Part b) System Design and Python Code
+b) System Design and Python Code
 
 **System Components:**
 
-1. PIR Sensor connected to SBC-PT (e.g., GPIO pin 4)
-    
+1. PIR Sensor connected to SBC-PT (e.g., GPIO pin 4)    
 2. Siren connected to SBC-PT (e.g., GPIO pin 17)
-    
 3. SBC-PT connected to network via DSL-Modem-PT
-    
 4. Notification service (email/SMS) through internet
     
 
@@ -414,17 +355,11 @@ except KeyboardInterrupt:
 **System Operation:**
 
 1. PIR sensor continuously monitors for motion
-    
 2. When motion is detected:
-    
     - Siren is activated for 30 seconds
-        
     - Email alert is sent to security team with timestamp
-        
     - System enters brief cooldown period to prevent repeated alerts
-        
 3. Security team can check facility through connected cameras or dispatch personnel
-    
 4. System can be expanded with additional sensors (door/window contacts, glass break detectors)
 
 # Q5
