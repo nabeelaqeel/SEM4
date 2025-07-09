@@ -201,6 +201,7 @@ File : `Network Security v1.0 - Module 6.pptx
 
 # NTP
 - `Network Security v1.0 - Module 6.pptx`
+- a networking protocol designed to synchronize the clocks of computer systems across packet-switched, variable-latency data networks.
 - NTP networks use a hierarchical system of time sources. Each level in this hierarchical system is called a stratum. The stratum level is defined as the number of hop counts from the authoritative source
 - ![](../images/Screenshot%20from%202025-07-06%2011-58-03.png)
 - command
@@ -210,6 +211,11 @@ File : `Network Security v1.0 - Module 6.pptx
 - - **show ntp associations** and **show ntp status**
 ```
 
+The Network Time Protocol (NTP) is a critical protocol for synchronizing clocks across networked devices. In cybersecurity, accurate timekeeping is essential for:
+- Logging & Forensics – Correlating events across systems during investigations.
+- Authentication & Certificates – Kerberos, TLS/SSL, and PKI rely on synchronized time.
+- Regulatory Compliance – HIPAA, PCI DSS, and GDPR require accurate timestamps for audits.    
+- Intrusion Detection (IDS/IPS) – Detecting anomalies in real-time logs.
 
 # SDN
 - File : `ENSA_Module_13.pdf`
