@@ -8,3 +8,5 @@
 - BMC important topic:
 - What do you think about the security measure, as a XX, what would you implement, wireless attendance tracker, cost to implement
 - 4Q 50 marks 2-15marks 2-10marks
+  
+  
