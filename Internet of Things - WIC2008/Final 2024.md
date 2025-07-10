@@ -133,6 +133,51 @@ void loop() {
 }
 ```
 
+```
+5V O--->| |<----O GND
+           | BUTTON  |
+           |         |
+           |         |
+           +---------O Digital Pin 2
+           |
+          | |
+          | | 10kΩ (Pull-down Resistor)
+          |_|
+           |
+          ---
+           |
+          GND
+
+      GND O--->| |<----O Digital Pin 13
+           | LED     |
+           |         |
+           +---------O
+           |
+          | |
+          | | 220Ω (Current-limiting Resistor)
+          |_|
+           |
+        (To LED Anode)
+```
+
+```
+Arduino
++-------------------------------------------------+
+|                                                 |
+|  5V  >----(One leg of PUSH BUTTON)              |
+|                                                 |
+|  GND >----(Cathode[-] of LED)                   |
+|        |                                        |
+|        +----(One end of 10kΩ RESISTOR)          |
+|                                                 |
+| Pin 2 >----(Other leg of PUSH BUTTON)           |
+|        |                                        |
+|        +----(Other end of 10kΩ RESISTOR)        |
+|                                                 |
+| Pin 13 >---(One end of 220Ω RESISTOR)----(Anode[+] of LED)
+|                                                 |
++-------------------------------------------------+
+```
 Part c) Arduino code for potentiometer-controlled LED dimming with connections
 
 **Circuit Connections:**
@@ -291,21 +336,21 @@ b) System Design and Python Code
 
 python
 
+```python
 import RPi.GPIO as GPIO
 import time
 import smtplib
 from email.mime.text import MIMEText
 
 # GPIO Setup
-```python
 GPIO.setmode(GPIO.BCM)
 PIR_PIN = 4
 SIREN_PIN = 17
 GPIO.setup(PIR_PIN, GPIO.IN)
 GPIO.setup(SIREN_PIN, GPIO.OUT)
-```
+
 # Email configuration
-```python
+
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 EMAIL_ADDRESS = 'security@company.com'
