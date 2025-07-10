@@ -46,7 +46,7 @@
 > # Using the requests library, create a new HTTP GET Request against the Webex Teams API Endpoint for Webex Teams Rooms:
 > #  the local object "r" will hold the returned data:
 > r = requests.get(   "https://api.ciscospark.com/v1/rooms",
->                     headers={'Authorization':APIAuthorizationKey}
+>                     headers={'Authorization':APIAuthorizationKey},
 >                 )
 > 
 > # Check if the response from the API call was OK (resp. code 200)
